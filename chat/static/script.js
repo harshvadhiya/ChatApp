@@ -22,6 +22,11 @@ document.getElementById('usrSubmit').addEventListener('click', function (e) {
   }
 });
 
+// focus on message input when user clicks on send button
+document.getElementById('usrSubmit').addEventListener("click", ()=>{
+  document.getElementById('message-input').focus();
+});
+
 // ___________________________________________________________CONNECTION STATUS____________________________________________________________
 
 
@@ -41,7 +46,7 @@ document.getElementById('usrSubmit').addEventListener('click', function (e) {
 socket.on('chat', function (data) {
   const username = document.createElement('div');
   username.className = 'usernameIncoming';
-  username.innerHTML = `${data['username']}:`;
+  username.innerHTML = `${data['username']}`;
 
   const chatMessage = document.createElement('div');
   chatMessage.className = 'chat-message incoming';
