@@ -12,7 +12,7 @@
   <body>
     <!-- <div style="position: absolute"></div> -->
     <div id="card">
-      <h2 id="infoUser">Enter Your Username</h2>
+      <h2 id="infoUser">Enter Your Username <theme-switch></theme-switch></h2>
       <form id="userform">
         <input
           type="text"
@@ -26,7 +26,7 @@
     </div>
     <!--   -->
     <div class="chat-container" style="display: none">
-      <header class="chat-header">Chat Room</header>
+    <header class="chat-header">Chat Room <theme-switch>Change theme</theme-switch> </header>
       <div class="chat-area" id="chat-area"></div>
       <form class="chat-input">
         <input
@@ -39,6 +39,7 @@
       </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+    <script src="https://unpkg.com/@mahozad/theme-switch"></script>
     <script src="../static/script.js"></script>
   </body>
 </html>

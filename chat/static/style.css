@@ -1,8 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-body {
+html {
+  --my-page-background-color: #fff;
+  --my-text-color: red;
+}
+
+html[data-theme="dark"] {
+  --my-page-background-color: #494f54;
+}
+
+body /* or any selector you want */ {
+  background: var(--my-page-background-color);
+  color: var(--my-text-color);
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+
+}
+theme-switch {
+  width: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  --theme-switch-icon-color: black;
 }
 
 /* ______________________________________________________Username Popup________________________________________________________________ */
@@ -66,12 +85,12 @@ body {
 }
 
 .chat-header {
-  background-color: gray;
+  /* background-color: gray; */
   padding: 20px;
   font-size: 20px;
   text-align: center;
   font-family: "Roboto", sans-serif;
-  color: white;
+  color: black;
 }
 
 .chat-area {
