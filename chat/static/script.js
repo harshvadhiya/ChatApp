@@ -4,6 +4,10 @@ const sendButton = document.getElementById('send-button');
 let messageHistory = [];
 
 const socket = io({ autoConnect: false });
+window.onload = function () {
+  document.getElementById('username').focus();
+
+}
 
 // Pop - Up Code
 document.getElementById('usrSubmit').addEventListener('click', function (e) {
