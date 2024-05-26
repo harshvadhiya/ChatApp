@@ -36,7 +36,6 @@ document.getElementById('usrSubmit').addEventListener("click", ()=>{
 
 
 
-// Update Users Count
 // document.getElementById('update-users-count').addEventListener('click', function (e) {
 //   e.preventDefault();
 //   socket.emit('update_users_count');
