@@ -17,10 +17,25 @@ def handle_connect():
     pass
 
 
+users = {}
+
 @socketio.on("user_join")
 def handle_user_join(username):
-    users[username] = request.sid
-    print(username)
+    if username in users.keys():
+        emit("userExists", True, to=request.sid)
+    else:
+        users[username] = request.sid
+        emit("userExists", False, to=request.sid)
+    print(users)
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    for username, sid in list(users.items()):
+        if sid == request.sid:
+            del users[username]
+            break
+    print(users)
+
 
 @socketio.on("message")
 def handle_message(message):

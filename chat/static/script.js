@@ -19,15 +19,26 @@ document.getElementById('usrSubmit').addEventListener('click', function (e) {
 
     socket.connect();
 
-    socket.on("connect", function () {
+    socket.once("connect", function () {
       socket.emit("user_join", username);
     });
 
-  }
+    socket.once("userExists", function (usernameExists) {
+      if (usernameExists) {
+        alert("Username already exists, please choose another one");
+        document.getElementById('card').style.display = 'block';
+        document.querySelector('.chat-container').style.display = 'none';
+        socket.disconnect();
+      }
+    });
+  } 
 });
 
+
+
+
 // focus on message input when user clicks on send button
-document.getElementById('usrSubmit').addEventListener("click", ()=>{
+document.getElementById('usrSubmit').addEventListener("click", () => {
   document.getElementById('message-input').focus();
 });
 
